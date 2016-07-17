@@ -12,6 +12,7 @@
 		581DE1C61D3BAC0A00E5E252 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581DE1C41D3BAC0A00E5E252 /* Main.storyboard */; };
 		581DE1C81D3BAC0A00E5E252 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 581DE1C71D3BAC0A00E5E252 /* Assets.xcassets */; };
 		581DE1CB1D3BAC0A00E5E252 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581DE1C91D3BAC0A00E5E252 /* LaunchScreen.storyboard */; };
+		581DE1D31D3BAC3100E5E252 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 581DE1D21D3BAC3100E5E252 /* EventKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		581DE1C71D3BAC0A00E5E252 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		581DE1CA1D3BAC0A00E5E252 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		581DE1CC1D3BAC0A00E5E252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		581DE1D21D3BAC3100E5E252 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				581DE1D31D3BAC3100E5E252 /* EventKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +41,7 @@
 		581DE1B41D3BAC0A00E5E252 = {
 			isa = PBXGroup;
 			children = (
+				581DE1D21D3BAC3100E5E252 /* EventKit.framework */,
 				581DE1BF1D3BAC0A00E5E252 /* Calendar */,
 				581DE1BE1D3BAC0A00E5E252 /* Products */,
 			);
