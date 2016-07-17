@@ -39,6 +39,47 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         })
     }
+    
+    @IBAction func saveEvent(sender: UIButton) {
+        eventStore.requestAccessToEntityType(.Event, completion: { (granted, error) in
+        
+            if (granted == false ) {
+                print("Access Denied")
+            } else {
+                let arrayCalrs = self.eventStore.calendarsForEntityType(.Event)
+                var theCal: EKCalendar!
+                for calr in arrayCalrs {
+                    if(calr.title == self.eventCalenda.text) {
+                        theCal = calr
+                        print(theCal.title)
+                    }
+                    
+                }
+                if(theCal != nil) {
+                    let event = EKEvent(eventStore: self.eventStore)
+                    event.title = self.titleEvent.text!
+                    event.startDate = self.dataPicker.date
+                    event.endDate = self.dataPicker.date.dateByAddingTimeInterval(3600)
+                    event.calendar = theCal
+                    do {
+                        try! self.eventStore.saveEvent(event, span: .ThisEvent)
+                        let alert = UIAlertController(title: "Calendar", message: "event created \(event.title) in \(theCal.title)", preferredStyle: .Alert)
+                        alert.addAction(UIAlertAction(title: "Accept", style: .Default, handler: nil))
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.presentViewController(alert, animated: true, completion: nil)
+                            
+                        })
+                        
+                    }
+                }
+                else {
+                    print("No calendar with that name")
+                }
+            }
+            
+            
+        })
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
