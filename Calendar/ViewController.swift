@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // outlets
     @IBOutlet weak var dataPicker: UIDatePicker!
-    @IBOutlet weak var textField: UITextView!
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var eventCalenda: UITextField!
     @IBOutlet weak var titleEvent: UITextField!
     
@@ -84,6 +84,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        eventStore = EKEventStore()
+        let tapGesRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dissmissKeyBrd")
+        self.view.addGestureRecognizer(tapGesRecognizer)
+        
+    }
+    
+    func dissmissKeyBrd() {
+        self.textField.resignFirstResponder()
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {

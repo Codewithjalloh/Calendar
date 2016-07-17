@@ -16,12 +16,56 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cdh-4X-ZNv">
+                                <rect key="frame" x="33" y="71" width="347" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUb-o2-w8h">
+                                <rect key="frame" x="129" y="120" width="157" height="30"/>
+                                <state key="normal" title="Save Calendar"/>
+                                <connections>
+                                    <action selector="saveCal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GgY-5Y-ivM"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="HeH-gc-a73">
+                                <rect key="frame" x="-1" y="158" width="414" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="490454440.62064999">
+                                    <!--2016-07-17 13:20:40 +0000-->
+                                </date>
+                            </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="My Cal" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOW-XN-A7S">
+                                <rect key="frame" x="129" y="395" width="157" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TitleEvent" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eTf-vE-5Np">
+                                <rect key="frame" x="129" y="445" width="157" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfp-tS-JWb">
+                                <rect key="frame" x="134" y="492" width="152" height="30"/>
+                                <state key="normal" title="Save Event"/>
+                                <connections>
+                                    <action selector="saveEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eFh-0m-0zC"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="dataPicker" destination="HeH-gc-a73" id="Stz-IE-uOh"/>
+                        <outlet property="eventCalenda" destination="SOW-XN-A7S" id="b41-qY-FJ9"/>
+                        <outlet property="textField" destination="Cdh-4X-ZNv" id="do7-H0-Yk9"/>
+                        <outlet property="titleEvent" destination="eTf-vE-5Np" id="J4j-Ux-V5v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="565" y="211"/>
         </scene>
     </scenes>
 </document>
